@@ -1,4 +1,3 @@
-
 /* =========================================================
    GUESS THE FOOTBALL CLUB
    Główna logika gry
