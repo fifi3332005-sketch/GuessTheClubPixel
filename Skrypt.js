@@ -4,6 +4,7 @@
    Główna logika gry
    ========================================================= */
 
+
 /* 1. USTAWIENIA I STAN GRY ================================ */
 
 const MAKS_PROB = 7;
@@ -14,7 +15,20 @@ let proba = 1;
 let koniecGry = false;
 
 
-/* 2. WCZYTYWANIE BAZY KLUBÓW ============================= */
+/* 2. LICZNIK PRÓB ======================================== */
+
+function aktualizujLicznik(wykonaneProby = proba - 1) {
+    const wartosc = document.querySelector(
+        "#licznik .licznik-wartosc"
+    );
+
+    if (wartosc) {
+        wartosc.textContent = `${wykonaneProby}/${MAKS_PROB}`;
+    }
+}
+
+
+/* 3. WCZYTYWANIE BAZY KLUBÓW ============================= */
 
 async function wczytajKluby() {
     try {
@@ -35,18 +49,21 @@ async function wczytajKluby() {
             Math.floor(Math.random() * kluby.length)
         ];
 
-        console.log("Loaded clubs:", kluby.length);
-
     } catch (blad) {
         console.error("Database error:", blad);
 
-        document.getElementById("licznik").textContent =
-            "Error: " + blad.message;
+        const wartosc = document.querySelector(
+            "#licznik .licznik-wartosc"
+        );
+
+        if (wartosc) {
+            wartosc.textContent = "ERROR";
+        }
     }
 }
 
 
-/* 3. FUNKCJE POMOCNICZE ================================== */
+/* 4. FUNKCJE POMOCNICZE ================================== */
 
 // Ignorowanie wielkości liter i znaków diakrytycznych
 function normalizuj(tekst) {
@@ -56,6 +73,7 @@ function normalizuj(tekst) {
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
 }
+
 
 // Wyszukiwanie klubu po dokładnej nazwie
 function przystosowanie(nazwa) {
@@ -68,15 +86,18 @@ function przystosowanie(nazwa) {
     return klub;
 }
 
+
 // Formatowanie pojemności stadionu
 function formatujPojemnosc(liczba) {
     return (liczba / 1000).toFixed(1) + " k";
 }
 
+
 // Formatowanie wartości kadry
 function formatujWartosc(liczba) {
     return liczba.toFixed(1) + " mln";
 }
+
 
 // Kierunek strzałki dla wartości liczbowych
 function kierunekWartosci(wybrana, szukana) {
@@ -86,6 +107,7 @@ function kierunekWartosci(wybrana, szukana) {
     return "rowne";
 }
 
+
 // Strzałka w górę, w dół lub poprawna odpowiedź
 function rysujStrzalke(kierunek) {
     if (kierunek === "rowne") {
@@ -93,9 +115,11 @@ function rysujStrzalke(kierunek) {
     }
 
     return `
-        <svg class="strzalka ${kierunek}"
-             viewBox="0 0 48 48"
-             aria-hidden="true">
+        <svg
+            class="strzalka ${kierunek}"
+            viewBox="0 0 48 48"
+            aria-hidden="true"
+        >
             <path
                 d="M24 5 L42 23 H32 V43 H16 V23 H6 Z"
                 fill="white"
@@ -105,7 +129,7 @@ function rysujStrzalke(kierunek) {
 }
 
 
-/* 4. FLAGI PAŃSTW ======================================== */
+/* 5. FLAGI PAŃSTW ======================================== */
 
 function pokazFlage(kraj) {
     const flagi = {
@@ -153,7 +177,7 @@ function pokazFlage(kraj) {
 }
 
 
-/* 5. ODLEGŁOŚĆ I KIERUNEK STADIONÓW ====================== */
+/* 6. ODLEGŁOŚĆ I KIERUNEK STADIONÓW ====================== */
 
 // Odległość w kilometrach — wzór Haversine
 function obliczOdleglosc(wybor, zagadka) {
@@ -181,6 +205,7 @@ function obliczOdleglosc(wybor, zagadka) {
     return Math.round(odleglosc);
 }
 
+
 // Kierunek od wybranego stadionu do szukanego
 // 0° = północ, 90° = wschód
 function obliczKierunek(wybor, zagadka) {
@@ -204,7 +229,7 @@ function obliczKierunek(wybor, zagadka) {
 }
 
 
-/* 6. PORÓWNYWANIE KLUBÓW ================================= */
+/* 7. PORÓWNYWANIE KLUBÓW ================================= */
 
 function sprawdzenie(wybor, zagadka) {
     const trafienie = wybor.nazwa === zagadka.nazwa;
@@ -243,7 +268,7 @@ function sprawdzenie(wybor, zagadka) {
         `;
 
     } else {
-        // Porównanie państwa i miasta
+        // Porównanie kraju i miasta
         const kolorKraju =
             wybor.kraj === zagadka.kraj
                 ? "zielony"
@@ -338,7 +363,7 @@ function sprawdzenie(wybor, zagadka) {
     // Najnowsza próba na górze historii
     document.getElementById("historia").prepend(wiersz);
 
-    // Wyświetlenie ekranu zwycięstwa po krótkiej pauzie
+    // Ekran zwycięstwa po krótkiej pauzie
     if (trafienie) {
         setTimeout(pokazWygrana, 1300);
     }
@@ -347,7 +372,7 @@ function sprawdzenie(wybor, zagadka) {
 }
 
 
-/* 7. OBSŁUGA PRÓB ======================================== */
+/* 8. OBSŁUGA PRÓB ======================================== */
 
 function sprawdzKlub() {
     if (koniecGry || !zagadka || proba > MAKS_PROB) {
@@ -361,8 +386,12 @@ function sprawdzKlub() {
         return;
     }
 
+    // Zamknięcie listy podpowiedzi
+    document.getElementById("podpowiedzi").replaceChildren();
+
     // Poprawna odpowiedź
     if (sprawdzenie(wybor, zagadka)) {
+        aktualizujLicznik(proba);
         koniecGry = true;
         return;
     }
@@ -371,12 +400,7 @@ function sprawdzKlub() {
     proba++;
     pole.value = "";
 
-    const pozostalo = MAKS_PROB - proba + 1;
-
-    document.getElementById("licznik").textContent =
-        pozostalo === 1
-            ? "1 Guess left"
-            : `${pozostalo} Guesses left`;
+    aktualizujLicznik();
 
     // Wyczerpanie wszystkich siedmiu prób
     if (proba > MAKS_PROB) {
@@ -386,7 +410,7 @@ function sprawdzKlub() {
 }
 
 
-/* 8. EKRAN ZWYCIĘSTWA ==================================== */
+/* 9. EKRAN ZWYCIĘSTWA ==================================== */
 
 function pokazWygrana() {
     const ekran = document.createElement("div");
@@ -396,75 +420,20 @@ function pokazWygrana() {
         <div class="okno-wygranej">
 
             <h1 class="tytul-wygranej">
-                <span class="puchar-boczny">🏆</span>
                 <span class="napis-victory">VICTORY!</span>
-                <span class="puchar-boczny">🏆</span>
             </h1>
 
-            <h2 class="wygrany-klub">
-                ${zagadka.nazwa}
-            </h2>
+            <div class="centrum-wygranej">
 
-            <!-- Zielony separator ze szkicowaną piłką -->
-            <div class="separator-wygranej">
-                <span class="linia-wygranej"></span>
+                <h2 class="wygrany-klub">
+                    ${zagadka.nazwa}
+                </h2>
 
-                <svg
-                    class="pilka-wygranej"
-                    viewBox="0 0 64 64"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                >
-                    <circle cx="32" cy="32" r="28"/>
-
-                    <path
-                        d="M32 18 L45 27 L40 42 L24 42 L19 27 Z"
-                    />
-
-                    <path
-                        d="M32 18 L27 5 L43 8 Z"
-                    />
-
-                    <path
-                        d="M43 8 L58 23 L45 27 Z"
-                    />
-
-                    <path
-                        d="M45 27 L54 43 L40 42 Z"
-                    />
-
-                    <path
-                        d="M40 42 L44 57 L20 57 L24 42 Z"
-                    />
-
-                    <path
-                        d="M24 42 L10 43 L6 23 L19 27 Z"
-                    />
-
-                    <path
-                        d="M19 27 L21 8 L27 5 L32 18 Z"
-                    />
-
-                    <path
-                        d="M58 23 L54 43
-                           M44 57 L54 43
-                           M10 43 L20 57
-                           M6 23 L21 8"
-                    />
-                </svg>
-
-                <span class="linia-wygranej"></span>
-            </div>
-
-            <div class="tekst-gratulacji">
-                <p class="gratulacje-naglowek">
-                    Congratulations!
-                </p>
-
-                <p class="gratulacje-opis">
-                    You've guessed the right club in ${proba}
+                <p class="liczba-prob-wygranej">
+                    You got it in ${proba}
                     ${proba === 1 ? "guess" : "guesses"}!
                 </p>
+
             </div>
 
             <button onclick="location.reload()">
@@ -478,44 +447,29 @@ function pokazWygrana() {
 }
 
 
-/* 9. EKRAN PORAŻKI ======================================= */
-
-
+/* 10. EKRAN PORAŻKI ====================================== */
 
 function pokazPrzegrana() {
     const ekran = document.createElement("div");
     ekran.className = "ekran-przegranej";
 
-    const krzyzyk = `
-        <svg class="ikona-porazki"
-             viewBox="0 0 32 32"
-             xmlns="http://www.w3.org/2000/svg"
-             aria-hidden="true">
-            <path d="M7 7L25 25M25 7L7 25"/>
-        </svg>
-    `;
-
     ekran.innerHTML = `
         <div class="okno-przegranej">
 
             <h1 class="tytul-porazki">
-                ${krzyzyk}
                 <span class="napis-game-over">GAME OVER!</span>
-                ${krzyzyk}
             </h1>
 
-            <p class="tekst-porazki">
-                The correct answer was:
-            </p>
+            <div class="centrum-porazki">
 
-            <h2 class="przegrany-klub">
-                ${zagadka.nazwa}
-            </h2>
+                <p class="tekst-porazki">
+                    The correct club was:
+                </p>
 
-            <div class="separator-porazki">
-                <span class="linia-porazki"></span>
-                ${krzyzyk}
-                <span class="linia-porazki"></span>
+                <h2 class="przegrany-klub">
+                    ${zagadka.nazwa}
+                </h2>
+
             </div>
 
             <button onclick="location.reload()">
@@ -529,9 +483,7 @@ function pokazPrzegrana() {
 }
 
 
-
-
-/* 10. AUTOMATYCZNE PODPOWIEDZI =========================== */
+/* 11. AUTOMATYCZNE PODPOWIEDZI =========================== */
 
 function pokazPodpowiedzi() {
     const pole = document.getElementById("nazwaKlubu");
@@ -578,11 +530,14 @@ function pokazPodpowiedzi() {
 }
 
 
-/* 11. URUCHOMIENIE GRY =================================== */
+/* 12. URUCHOMIENIE GRY =================================== */
 
 // Reakcja na wpisywanie nazwy klubu
 document.getElementById("nazwaKlubu")
     .addEventListener("input", pokazPodpowiedzi);
 
-// Wczytanie bazy i rozpoczęcie nowej gry
+// Początkowy stan licznika: 0/7
+aktualizujLicznik();
+
+// Wczytanie bazy i rozpoczęcie gry
 wczytajKluby();
