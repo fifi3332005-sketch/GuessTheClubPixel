@@ -991,5 +991,14 @@ body::after {
     }
 }
 
+/* MOBILE — WIĘKSZY NAPIS FOOTBALL CLUB */
+
+@media (max-width: 768px) {
+
+    .tytul-gry .tytul-dol {
+        font-size: clamp(27px, 7.6vw, 37px);
+    }
+}
+
 
 
