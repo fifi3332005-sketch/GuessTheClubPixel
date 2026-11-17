@@ -1,10 +1,9 @@
-
 /* ===========================================================
-   GUESS THE FOOTBALL CLUB — RETRO PIXEL ARCADE
+   GUESS THE FOOTBALL CLUB â RETRO PIXEL ARCADE
    Interfejs zbudowany w HTML i CSS
    =========================================================== */
 
-/* 1. PALETA KOLORÓW I USTAWIENIA */
+/* 1. PALETA KOLORÄÂW I USTAWIENIA */
 
 :root {
     --panel: rgba(0, 43, 30, .94);
@@ -14,7 +13,7 @@
     --czerwony-cien: #810b26;
     --zolty: #ffdb20;
     --czarny: #00170b;
-    --pixel: "Pixelify Sans", monospace;
+    --pixel: "Chakra Petch", sans-serif;
     --logo: "Bungee", Impact, sans-serif;
 }
 
@@ -64,7 +63,7 @@ body > * {
     gap: 1px;
 
     width: min(100%, 980px);
-    margin: 145px auto 20px;
+    margin: 30px auto 20px;
     padding: 0 4px;
 
     font-family: var(--logo);
@@ -142,74 +141,13 @@ body > * {
 }
 
 
-/* 3. LICZNIK PRÓB — ŻÓŁTY RETRO */
-
-#licznik {
-    position: relative;
-    display: table;
-
-    max-width: calc(100% - 20px);
-
-    margin: 25px auto 27px;
-    padding: 9px 24px 10px;
-
-    color: #ffffff;
-    background: #002d21;
-
-    border: 5px solid var(--zolty);
-    border-radius: 0;
-
-    box-shadow:
-        5px 5px 0 var(--czarny),
-        8px 8px 0 rgba(0, 0, 0, .45);
-
-    clip-path: polygon(
-        9px 0,
-        calc(100% - 9px) 0,
-        calc(100% - 9px) 4px,
-        calc(100% - 4px) 4px,
-        calc(100% - 4px) 9px,
-        100% 9px,
-        100% calc(100% - 9px),
-        calc(100% - 4px) calc(100% - 9px),
-        calc(100% - 4px) calc(100% - 4px),
-        calc(100% - 9px) calc(100% - 4px),
-        calc(100% - 9px) 100%,
-        9px 100%,
-        9px calc(100% - 4px),
-        4px calc(100% - 4px),
-        4px calc(100% - 9px),
-        0 calc(100% - 9px),
-        0 9px,
-        4px 9px,
-        4px 4px,
-        9px 4px
-    );
-
-    font-family: var(--pixel);
-    font-size: clamp(22px, 2.2vw, 30px);
-    font-weight: 700;
-    line-height: 1.05;
-
-    text-transform: uppercase;
-    white-space: nowrap;
-    letter-spacing: .03em;
-
-    text-shadow: 3px 3px #000000;
-}
-
-#licznik::first-letter {
-    color: var(--zolty);
-}
-
-
 /* 4. WYSZUKIWARKA RETRO */
 
 .panel-wpisywania {
     position: relative;
     z-index: 20;
 
-    width: min(100%, 1100px);
+    width: min(60%, 650px);
     margin: 0 auto;
 }
 
@@ -217,14 +155,14 @@ body > * {
     display: block;
 
     width: 100%;
-    height: 68px;
+    height: 60px;
 
     margin: 0;
     padding: 10px 20px 10px 68px;
 
     outline: none;
 
-    border: 5px solid var(--zielony);
+    border: 5px solid #39ff14;
     border-radius: 0;
 
     background: var(--panel);
@@ -290,7 +228,7 @@ body > * {
 }
 
 
-/* 5. PODPOWIEDZI KLUBÓW */
+/* 5. PODPOWIEDZI KLUBÄÂW */
 
 #podpowiedzi {
     position: absolute;
@@ -304,7 +242,7 @@ body > * {
 
     overflow-y: auto;
 
-    border: 4px solid var(--zielony);
+    border: 4px solid #39ff14;
     background: #00291e;
 
     text-align: left;
@@ -352,7 +290,7 @@ body > * {
 }
 
 
-/* 6. WSPÓLNY STYL NAGŁÓWKÓW I HISTORII */
+/* 6. WSPÄÂLNY STYL NAGÄšÂÄÂWKÄÂW I HISTORII */
 
 .naglowki,
 .wiersz {
@@ -364,14 +302,14 @@ body > * {
     align-items: center;
     gap: 9px;
 
-    width: min(100%, 1250px);
+    width: min(92%, 1150px);
 
     margin-left: auto;
     margin-right: auto;
 
     background: rgba(0, 42, 29, .95);
 
-    border: 4px solid var(--zielony);
+    border: 4px solid #39ff14;
     border-radius: 0;
 
     box-shadow:
@@ -403,13 +341,14 @@ body > * {
 }
 
 
-/* 7. NAGŁÓWKI KATEGORII */
+/* 7. NAGÄšÂÄÂWKI KATEGORII */
 
 .naglowki {
-    margin-top: 72px;
+    margin-top: 63px;
     margin-bottom: 12px;
 
-    padding: 14px 12px;
+    padding: 7px 12px;
+    min-height: 60px;
 
     color: #ffffff;
     text-shadow: 2px 2px #001009;
@@ -427,14 +366,14 @@ body > * {
     gap: 4px;
 
     font-family: var(--pixel);
-    font-size: 21px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.1;
 }
 
 .naglowek svg {
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 23px;
 
     flex-shrink: 0;
 
@@ -446,12 +385,12 @@ body > * {
 }
 
 .naglowek > svg {
-    width: 33px;
-    height: 33px;
+    width: 23px;
+    height: 23px;
 }
 
 
-/* 8. HISTORIA PRÓB */
+/* 8. HISTORIA PRÄÂB */
 
 #historia {
     width: 100%;
@@ -459,10 +398,12 @@ body > * {
 }
 
 .wiersz {
+    height: 70px;
+    min-height: 70px;
     margin-bottom: 12px;
-    padding: 9px 8px;
+    padding: 5px 7px;
 
-    border-color: #048c2b;
+    border-color: #39ff14;
 
     box-shadow:
         4px 4px 0 #003e18,
@@ -486,7 +427,7 @@ body > * {
 }
 
 
-/* 9. KAFELKI WYNIKÓW */
+/* 9. KAFELKI WYNIKÄÂW */
 
 .komorka {
     display: flex;
@@ -496,14 +437,17 @@ body > * {
     gap: 8px;
 
     min-width: 0;
-    min-height: 66px;
+    min-height: 46px;
+    height: 46px;
+    width: 90%;
+    justify-self: center;
 
-    padding: 9px 5px;
+    padding: 4px;
 
     color: #ffffff;
     background: #092b24;
 
-    border: 4px solid #399457;
+    border: 4px solid #20d910;
     border-radius: 0;
 
     font-family: var(--pixel);
@@ -538,23 +482,23 @@ body > * {
     );
 }
 
-/* Zielony — poprawna wartość */
+/* Zielony Ă˘ÂÂ poprawna wartoÄšÂĂÂ */
 
 .komorka.zielony {
-    background: #075922;
-    border-color: #53ff3b;
+    background: #159e38;
+    border-color: #20d910;
 }
 
-/* Czerwony — błędna wartość */
+/* Czerwony Ă˘ÂÂ bÄšÂĂÂdna wartoÄšÂĂÂ */
 
 .komorka.czerwony,
 .komorka.odleglosc {
     background: #650d1c;
-    border-color: var(--czerwony);
+    border-color: #ff5266;
 }
 
 
-/* 10. FLAGI I STRZAŁKI */
+/* 10. FLAGI I STRZAÄšÂKI */
 
 .wiersz .flaga {
     display: inline-flex;
@@ -569,6 +513,8 @@ body > * {
 
     width: 36px;
     height: 27px;
+    border: 0;
+    box-shadow: 2px 2px 0 #281018, 3px 3px 0 rgba(0,0,0,.5);
 
     object-fit: cover;
 }
@@ -591,7 +537,7 @@ body > * {
 button {
     padding: 12px 27px;
 
-    border: 4px solid #52ff2b;
+    border: 4px solid #39ff14;
     border-radius: 0;
 
     background: #0c8732;
@@ -618,617 +564,324 @@ button:active {
 }
 
 
-/* 12. EKRANY KOŃCOWE — RETRO */
 
-.ekran-wygranej,
-.ekran-przegranej {
-    position: fixed !important;
 
-    inset: 0;
-    z-index: 9999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 16px;
-
-    background: rgba(0, 10, 6, .84);
-
-    animation: pojawienie .3s steps(5, end);
-}
-
-.okno-wygranej,
-.okno-przegranej {
+/* ===========================================================
+   12. LICZNIK PRĂB
+   =========================================================== */
+#licznik.licznik-banner {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    z-index: 30;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    translate: none;
+}
+.licznik-etykieta {
+    color: #ffde23;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 #823c00, 4px 4px 0 #000;
+}
+.licznik-tablica {
+    display: grid;
+    place-items: center;
+    width: 170px;
+    height: 75px;
+    background: #071911;
+    border: 4px solid #39ff14;
+    box-shadow: 4px 4px 0 #006f1e, 7px 7px 0 #001c0a;
+    clip-path: polygon(9px 0,calc(100% - 9px) 0,calc(100% - 9px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 9px,100% 9px,100% calc(100% - 9px),calc(100% - 4px) calc(100% - 9px),calc(100% - 4px) calc(100% - 4px),calc(100% - 9px) calc(100% - 4px),calc(100% - 9px) 100%,9px 100%,9px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 9px),0 calc(100% - 9px),0 9px,4px 9px,4px 4px,9px 4px);
+}
+.licznik-wartosc {
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 3px 3px 0 #007b26,5px 5px 0 #000;
+}
+/* UkĹad interfejsu niezaleĹźny od poĹoĹźenia tĹa */
+body > .tytul-gry,
+body > .panel-wpisywania,
+body > .naglowki,
+body > #historia { translate: 0 20px; }
+/* Nie skaluj tĹa wraz z liczbÄ dodawanych wierszy */
+@media (min-width: 769px) {
+    body { background-attachment: fixed; }
+}
+/* Podpowiedzi â pikselowe naroĹźniki */
+#podpowiedzi {
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #006f1e;
+    clip-path: polygon(9px 0,calc(100% - 9px) 0,calc(100% - 9px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 9px,100% 9px,100% calc(100% - 9px),calc(100% - 4px) calc(100% - 9px),calc(100% - 4px) calc(100% - 4px),calc(100% - 9px) calc(100% - 4px),calc(100% - 9px) 100%,9px 100%,9px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 9px),0 calc(100% - 9px),0 9px,4px 9px,4px 4px,9px 4px);
+}
+#nazwaKlubu { line-height: 1; }
+/* MgĹa na tle boiska */
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    backdrop-filter: blur(2px) brightness(.72);
+    -webkit-backdrop-filter: blur(2px) brightness(.72);
+    -webkit-mask-image: radial-gradient(ellipse 72% 55% at 50% 65%, #000 0%, rgba(0,0,0,.85) 35%, rgba(0,0,0,.45) 65%, transparent 100%);
+    mask-image: radial-gradient(ellipse 72% 55% at 50% 65%, #000 0%, rgba(0,0,0,.85) 35%, rgba(0,0,0,.45) 65%, transparent 100%);
+}
+body::after {
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 65% 50% at 50% 68%, rgba(0,22,13,.38), rgba(0,28,15,.22) 45%, transparent 100%);
+}
 
+
+/* ===========================================================
+   13. EKRANY KOĹCOWE â WSPĂLNY SZKIELET
+   =========================================================== */
+.ekran-wygranej,
+.ekran-przegranej {
+    position: fixed !important;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0,10,6,.84);
+    animation: pojawienie .3s steps(5,end);
+}
+.okno-wygranej,
+.okno-przegranej {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     width: 100%;
     max-width: 760px;
     height: 460px;
-
     padding: 28px 28px 30px;
-
     border: 6px solid;
     border-radius: 0;
-
-    background: #00301e;
-    box-shadow: 8px 8px #001109;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Taki sam schodkowy kontur w obu ekranach */
+    clip-path: polygon(16px 0,calc(100% - 16px) 0,calc(100% - 16px) 4px,calc(100% - 8px) 4px,calc(100% - 8px) 8px,calc(100% - 4px) 8px,calc(100% - 4px) 16px,100% 16px,100% calc(100% - 16px),calc(100% - 4px) calc(100% - 16px),calc(100% - 4px) calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) calc(100% - 4px),calc(100% - 16px) calc(100% - 4px),calc(100% - 16px) 100%,16px 100%,16px calc(100% - 4px),8px calc(100% - 4px),8px calc(100% - 8px),4px calc(100% - 8px),4px calc(100% - 16px),0 calc(100% - 16px),0 16px,4px 16px,4px 8px,8px 8px,8px 4px,16px 4px);
 }
-
-.okno-wygranej {
-    border-color: var(--zielony);
-    background: #00301e;
+.okno-wygranej { border-color: #39ff14; background-image: url('./victory-bg.png'); }
+.okno-przegranej { border-color: #ff304c; background-image: url('./defeat-bg.png'); }
+.okno-wygranej::before,
+.okno-przegranej::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 }
-
-.okno-przegranej {
-    border-color: var(--czerwony);
-    background: #330916;
+.okno-wygranej::before { background: linear-gradient(180deg,rgba(0,8,5,.73),rgba(0,9,5,.66) 42%,rgba(0,6,4,.82)); }
+.okno-przegranej::before { background: rgba(12,0,5,.72); }
+.okno-wygranej::after,
+.okno-przegranej::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
 }
-
-
-/* 13. VICTORY I GAME OVER */
-
-.okno-wygranej .tytul-wygranej,
-.okno-przegranej .tytul-porazki {
+.okno-wygranej::after { box-shadow: inset 0 0 0 7px #39ff14,inset 0 0 0 12px #08652b,inset 0 0 0 15px rgba(0,15,7,.9); }
+.okno-przegranej::after { box-shadow: inset 0 0 0 7px #ff304c,inset 0 0 0 12px #7c1025,inset 0 0 0 15px rgba(20,0,6,.9); }
+.okno-wygranej > *,
+.okno-przegranej > * { position: relative; z-index: 2; }
+/* ZĹoto-pomaraĹczowy i czerwony napis retro */
+.tytul-wygranej,
+.tytul-porazki {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-
-    margin: 8px 0 25px;
     width: 100%;
-
-    font-family: var(--logo);
-    font-size: clamp(28px, 5vw, 58px);
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P',monospace;
     font-weight: 400;
-    font-style: normal;
-    line-height: 1.15;
+    line-height: 1.5;
+    letter-spacing: -2px;
     white-space: nowrap;
+    paint-order: stroke fill;
 }
-
 .okno-wygranej .tytul-wygranej {
-    color: #71ff4f;
-
-    text-shadow:
-        4px 4px #006b2a,
-        7px 7px #001b08;
+    font-size: clamp(26px,4.4vw,48px);
+    transform: translateY(-5px);
+    color: #ffd332;
+    -webkit-text-stroke: 1.5px #60250f;
+    text-shadow: 2px 2px 0 #ff911d,4px 4px 0 #dd5519,6px 6px 0 #8f2a15,8px 8px 0 #39140e,10px 10px 0 #050402;
 }
-
 .okno-przegranej .tytul-porazki {
-    color: #ff596d;
-
-    text-shadow:
-        4px 4px #8d1429,
-        7px 7px #210009;
+    font-size: clamp(26px,3.6vw,44px);
+    transform: translateY(-10px);
+    color: #ff4545;
+    -webkit-text-stroke: 1.5px #3e0610;
+    text-shadow: 2px 2px 0 #ff7d33,4px 4px 0 #b51b2d,6px 6px 0 #750a1c,8px 8px 0 #35030e,10px 10px 0 #090005;
 }
-
-.puchar-boczny {
-    display: inline-block;
-
-    font-size: .7em;
-    line-height: 1;
-
-    transform: none;
+.napis-victory,.napis-game-over { display: block; font: inherit; color: inherit; transform: none; }
+.centrum-wygranej,
+.centrum-porazki {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 90%;
+    transform: translate(-50%,-50%);
 }
-
-.napis-victory,
-.napis-game-over {
-    font-style: normal;
-    transform: none;
-}
-
-/* Proste czerwone krzyżyki */
-
-.okno-przegranej .ikona-porazki {
-    width: 35px;
-    height: 35px;
-
-    flex-shrink: 0;
-
-    fill: none;
-    stroke: #ff596d;
-    stroke-width: 5;
-
-    stroke-linecap: square;
-    stroke-linejoin: miter;
-}
-
-
-/* 14. NAZWY KLUBÓW W EKRANACH KOŃCOWYCH */
-
+.separator-wygranej { width: 100%; }
 .wygrany-klub,
 .przegrany-klub {
-    margin: 5px 0 17px;
-
-    color: #ffffff;
-
-    font-family: var(--pixel);
-    font-size: clamp(25px, 4vw, 39px);
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Chakra Petch',sans-serif;
+    font-size: clamp(32px,4.5vw,48px);
     font-weight: 700;
     line-height: 1.15;
-
+    letter-spacing: .5px;
+    text-align: center;
     overflow-wrap: anywhere;
-    text-shadow: 3px 3px #000000;
 }
-
-.okno-przegranej .tekst-porazki {
-    margin: 8px 0 7px;
-
-    color: #ffffff;
-
-    font-family: var(--pixel);
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-
-/* 15. SEPARATORY */
-
-.separator-wygranej,
-.separator-porazki {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-
-    width: 80%;
-    margin: 0 auto;
-}
-
-.linia-wygranej,
-.linia-porazki {
-    height: 4px;
-    flex: 1;
-
-    background: var(--zielony);
-}
-
-.linia-porazki {
-    background: var(--czerwony);
-}
-
-.separator-wygranej svg.pilka-wygranej {
-    width: 37px;
-    height: 37px;
-
-    flex-shrink: 0;
-
-    fill: none;
-
-    stroke: #75ff67;
-    stroke-width: 2;
-
-    stroke-linejoin: miter;
-    stroke-linecap: square;
-}
-
-.separator-porazki .ikona-porazki {
-    width: 34px;
-    height: 34px;
-}
-
-
-/* 16. TEKST GRATULACJI */
-
-.tekst-gratulacji {
-    margin: 16px 0 15px;
-}
-
-.gratulacje-naglowek,
-.gratulacje-opis {
+.wygrany-klub { text-shadow: 2px 2px 0 #123a25,4px 4px 0 #000; }
+.przegrany-klub { text-shadow: 2px 2px 0 #52101b,4px 4px 0 #000; }
+.liczba-prob-wygranej,
+.tekst-porazki {
     margin: 0;
-
-    font-family: var(--pixel);
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.25;
+    font-family: 'Chakra Petch',sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 0 #001409;
 }
-
-.gratulacje-naglowek {
-    color: #ffffff;
-}
-
-.gratulacje-opis {
-    color: #d0dfd4;
-    margin-top: 5px;
-}
-
-
-/* 17. PRZYCISKI EKRANÓW KOŃCOWYCH */
-
+.liczba-prob-wygranej { color: #e2f6df; }
+.tekst-porazki { color: #ffe2e5; }
+/* Przyciski koĹcowe */
 .okno-wygranej button,
 .okno-przegranej button {
-    width: min(100%, 300px);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    max-width: 100%;
+    height: 62px;
+    min-height: 62px;
     margin: auto 0 0;
-    padding: 13px 14px;
-
-    font-size: 30px;
+    padding: 10px 14px;
+    border: 5px solid;
+    border-radius: 0;
+    color: #fff;
+    font-family: 'Press Start 2P',monospace;
+    font-size: clamp(13px,1.8vw,20px);
+    font-weight: 400;
+    line-height: 1.2;
+    cursor: pointer;
+    clip-path: polygon(11px 0,calc(100% - 11px) 0,calc(100% - 11px) 5px,calc(100% - 5px) 5px,calc(100% - 5px) 11px,100% 11px,100% calc(100% - 11px),calc(100% - 5px) calc(100% - 11px),calc(100% - 5px) calc(100% - 5px),calc(100% - 11px) calc(100% - 5px),calc(100% - 11px) 100%,11px 100%,11px calc(100% - 5px),5px calc(100% - 5px),5px calc(100% - 11px),0 calc(100% - 11px),0 11px,5px 11px,5px 5px,11px 5px);
 }
-
-.okno-przegranej button {
-    background: #b41c38;
-    border-color: #ff6575;
-
-    box-shadow: 5px 5px #550012;
-}
-
-.okno-przegranej button:hover {
-    background: #d12a48;
-}
-
-@keyframes pojawienie {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
+.okno-wygranej button { background: #159e38; border-color: #39ff14; text-shadow: 2px 2px 0 #00551b,4px 4px 0 #001b09; box-shadow: inset 0 0 0 3px #085e29; }
+.okno-przegranej button { background: #b71935; border-color: #ff4058; text-shadow: 2px 2px 0 #680d20,4px 4px 0 #210009; box-shadow: inset 0 0 0 3px #6e0b22; }
+.okno-wygranej button:hover { background: #20b947; transform: translateY(-2px); }
+.okno-przegranej button:hover { background: #d82645; transform: translateY(-2px); }
+.okno-wygranej button:active,
+.okno-przegranej button:active { transform: translateY(2px); }
+@keyframes pojawienie { from { opacity: 0; } to { opacity: 1; } }
 
 
-/* 18. WERSJA MOBILNA — JAK NA SCREENIE */
-
+/* ===========================================================
+   14. RESPONSYWNOĹÄ â TELEFONY
+   =========================================================== */
 @media (max-width: 768px) {
-
     body {
         padding: 12px 8px 30px;
         overflow-x: hidden;
-
-        background-image: url("./tlo-retro-mobile.png");
+        background-image: url('./tlo-retro-mobile.png');
         background-position: center top;
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
-
-    /* Tytuł pod piłkarzem i bramkarzem */
-
-    .tytul-gry {
-        margin-top: clamp(158px, 44vw, 205px);
-        margin-bottom: 20px;
-
-        gap: 0;
-    }
-
+    .tytul-gry { margin-top: clamp(158px,44vw,205px); margin-bottom: 20px; gap: 0; }
     .tytul-gora {
-        font-size: clamp(23px, 7vw, 36px);
-
+        font-size: clamp(56px,16vw,84px);
         -webkit-text-stroke: .5px #05100a;
-
-        text-shadow:
-            2px 2px #8f9b93,
-            3px 3px #07110b,
-            5px 5px #000000;
+        text-shadow: 2px 2px #8f9b93,3px 3px #07110b,5px 5px #000;
     }
-
     .tytul-dol {
         gap: 6px;
-
-        font-size: clamp(20px, 6vw, 34px);
-
+        font-size: clamp(46px,13vw,76px);
         -webkit-text-stroke: .65px #551608;
-
-        text-shadow:
-            1px 1px #ff9b00,
-            3px 3px #f34b05,
-            4px 4px #b50c17,
-            6px 6px #300000;
+        text-shadow: 1px 1px #ff9b00,3px 3px #f34b05,4px 4px #b50c17,6px 6px #300000;
     }
-
-    .tytul-dol::before,
-    .tytul-dol::after {
-        width: clamp(12px, 5vw, 25px);
-        height: 5px;
-
-        border-top-width: 2px;
-
-        box-shadow:
-            0 5px #ffa600,
-            0 8px #a80b20;
-    }
-
-    /* Licznik */
-
-    #licznik {
-        margin: 20px auto 27px;
-        padding: 8px 15px;
-
-        border-width: 4px;
-
-        font-size: clamp(17px, 5.4vw, 25px);
-        letter-spacing: 0;
-    }
-
-    /* Wyszukiwarka */
-
-    .panel-wpisywania {
-        width: 100%;
-    }
-
-    .panel-wpisywania input {
-        height: 55px;
-
-        padding: 8px 10px 8px 49px;
-
-        border-width: 4px;
-
-        font-size: clamp(17px, 5vw, 22px);
-    }
-
-    .ikona-lupy {
-        width: 24px;
-        height: 24px;
-        left: 15px;
-    }
-
-    .podpowiedz {
-        padding: 11px 10px;
-        font-size: 18px;
-    }
-
-    /* Pięć kolumn */
-
-    .naglowki,
-    .wiersz {
-        width: 100%;
-
-        grid-template-columns:
-            repeat(5, minmax(0, 1fr));
-
-        gap: 4px;
-        border-width: 3px;
-    }
-
-    /* Nagłówki */
-
-    .naglowki {
-        margin-top: 64px;
-        margin-bottom: 10px;
-
-        padding: 9px 3px;
-        min-height: 64px;
-    }
-
-    .naglowki > .naglowek:first-child {
-        display: none;
-    }
-
-    .naglowki .naglowek {
-        gap: 3px;
-
-        font-size: clamp(11px, 3.1vw, 16px);
-    }
-
-    .naglowek svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .naglowek > svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    /* Historia prób */
-
-    #historia {
-        margin: 9px auto 20px;
-    }
-
-    .wiersz {
-        align-items: stretch;
-
-        padding: 4px 3px;
-        margin-bottom: 10px;
-    }
-
-    /* Nazwa klubu nad kafelkami */
-
-    .wiersz > .nazwa-klubu {
-        grid-column: 1 / -1;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        min-height: 25px;
-
-        padding: 3px 1px 5px;
-
-        font-size: clamp(17px, 4.4vw, 23px);
-        line-height: 1.1;
-    }
-
-    /* Pięć kafelków */
-
-    .wiersz > .komorka {
-        min-width: 0;
-        min-height: 49px;
-        height: 49px;
-
-        padding: 3px 1px;
-
-        flex-direction: column;
-        gap: 1px;
-
-        border-width: 3px;
-
-        font-size: clamp(10px, 2.85vw, 14px);
-
-        overflow: hidden;
-    }
-
-    .wiersz .flaga img {
-        width: 26px;
-        height: 19px;
-    }
-
-    .wiersz > .komorka span:not(.flaga) {
-        white-space: nowrap;
-    }
-
-    .wiersz .strzalka {
-        width: 16px;
-        height: 16px;
-    }
-
-    /* Ekrany końcowe */
-
-    .ekran-wygranej,
-    .ekran-przegranej {
-        padding: 10px;
-    }
-
-    .okno-wygranej,
-    .okno-przegranej {
-        height: 390px;
-        padding: 20px 12px;
-
-        border-width: 4px;
-    }
-
-    .okno-wygranej .tytul-wygranej,
-    .okno-przegranej .tytul-porazki {
-        font-size: clamp(23px, 6vw, 36px);
-
-        gap: 7px;
-        margin: 8px 0 22px;
-    }
-
-    .puchar-boczny {
-        font-size: .8em;
-    }
-
-    .okno-przegranej .ikona-porazki {
-        width: 23px;
-        height: 23px;
-    }
-
-    .wygrany-klub,
-    .przegrany-klub {
-        font-size: 25px;
-    }
-
-    .okno-przegranej .tekst-porazki,
-    .gratulacje-naglowek,
-    .gratulacje-opis {
-        font-size: 19px;
-    }
-
-    .separator-wygranej,
-    .separator-porazki {
-        width: 92%;
-    }
-
-    .separator-porazki .ikona-porazki {
-        width: 30px;
-        height: 30px;
-    }
-
-    .okno-wygranej button,
-    .okno-przegranej button {
-        width: 245px;
-        font-size: 25px;
-    }
+    .tytul-dol::before,.tytul-dol::after { width: clamp(12px,5vw,25px); height: 5px; border-top-width: 2px; box-shadow: 0 5px #ffa600,0 8px #a80b20; }
+    #licznik.licznik-banner { top: 14px; left: 12px; width: 110px; gap: 4px; }
+    .licznik-etykieta { font-size: 14px; letter-spacing: 1px; }
+    .licznik-tablica { width: 110px; height: 51px; border-width: 3px; box-shadow: 3px 3px 0 #006f1e,5px 5px 0 #001c0a; }
+    .licznik-wartosc { font-size: 29px; letter-spacing: 1px; }
+    .panel-wpisywania { width: 100%; }
+    .panel-wpisywania input { height: 55px; padding: 8px 10px 8px 49px; border-width: 4px; font-size: max(16px,clamp(17px,5vw,22px)); }
+    .ikona-lupy { width: 24px; height: 24px; left: 15px; }
+    .podpowiedz { padding: 11px 10px; font-size: 18px; }
+    .naglowki,.wiersz { width: 100%; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 3px; border-width: 3px; }
+    .naglowki { margin-top: 34px; margin-bottom: 5px; padding: 9px 3px; min-height: 64px; }
+    .naglowki > .naglowek:first-child { display: none; }
+    .naglowki .naglowek { gap: 3px; font-size: clamp(11px,3.1vw,16px); }
+    .naglowek svg,.naglowek > svg { width: 22px; height: 22px; }
+    #historia { margin: 5px auto 20px; }
+    .wiersz { align-items: stretch; height: auto; min-height: 0; padding: 3px; margin-bottom: 5px; }
+    .wiersz > .nazwa-klubu { grid-column: 1/-1; display: flex; align-items: center; justify-content: center; min-height: 18px; padding: 1px 0 2px; font-size: 16px; line-height: 1; }
+    .wiersz > .komorka { width: 100%; min-height: 38px; height: 38px; max-height: 38px; padding: 2px 1px; flex-direction: column; gap: 0; border-width: 2px; font-size: 11px; overflow: hidden; }
+    .wiersz .flaga img { width: 23px; height: 16px; }
+    .wiersz > .komorka span:not(.flaga) { white-space: nowrap; }
+    .wiersz .strzalka { width: 13px; height: 13px; }
+    .ekran-wygranej,.ekran-przegranej { padding: 10px; }
+    .okno-wygranej,.okno-przegranej { height: 390px; padding: 27px 16px 23px; border-width: 4px; }
+    .okno-wygranej .tytul-wygranej { font-size: clamp(18px,5vw,28px); letter-spacing: -1px; transform: translateY(-3px); -webkit-text-stroke: 1px #60250f; text-shadow: 1px 1px 0 #ff911d,2px 2px 0 #dd5519,3px 3px 0 #8f2a15,4px 4px 0 #39140e,5px 5px 0 #050402; }
+    .okno-przegranej .tytul-porazki { font-size: clamp(17px,4.5vw,28px); letter-spacing: -1px; transform: translateY(-3px); }
+    .centrum-wygranej,.centrum-porazki { width: 94%; gap: 12px; }
+    .wygrany-klub,.przegrany-klub { font-size: clamp(24px,7vw,36px); }
+    .liczba-prob-wygranej,.tekst-porazki { font-size: 17px; }
+    .okno-wygranej button,.okno-przegranej button { width: 244px; height: 56px; min-height: 56px; font-size: 13px; border-width: 4px; }
 }
-
-
-/* 19. BARDZO MAŁE TELEFONY */
-
 @media (max-width: 380px) {
-
-    .tytul-gry {
-        margin-top: 150px;
-    }
-
-    .tytul-gora {
-        font-size: 6.6vw;
-    }
-
-    .tytul-dol {
-        font-size: 5.65vw;
-        gap: 4px;
-    }
-
-    .tytul-dol::before,
-    .tytul-dol::after {
-        width: 12px;
-    }
-
-    .naglowki .naglowek {
-        font-size: 10px;
-    }
-
-    .wiersz > .komorka {
-        font-size: 10px;
-    }
-
-    .wiersz > .nazwa-klubu {
-        font-size: 17px;
-    }
+    .tytul-gry { margin-top: 150px; }
+    .naglowki .naglowek { font-size: 10px; }
 }
-
-
-/* 20. NISKIE EKRANY */
-
 @media (max-height: 470px) {
-
-    .ekran-wygranej,
-    .ekran-przegranej {
-        align-items: flex-start;
-        overflow-y: auto;
-    }
-
-    .okno-wygranej,
-    .okno-przegranej {
-        height: auto;
-        min-height: 390px;
-        flex-shrink: 0;
-    }
+    .ekran-wygranej,.ekran-przegranej { align-items: flex-start; overflow-y: auto; }
+    .okno-wygranej,.okno-przegranej { height: auto; min-height: 390px; flex-shrink: 0; }
 }
 
-/* TYMCZASOWE UKRYCIE LICZNIKA PRÓB */
+/* PRZESUNIĘCIE INTERFEJSU 30 PX W DÓŁ */
+/* Bez przesuwania tła i licznika */
 
-#licznik {
-    display: none;
+body > .tytul-gry,
+body > .panel-wpisywania,
+body > .naglowki,
+body > #historia {
+    translate: 0 75px;
 }
-
-/* PRZESUNIĘCIE INTERFEJSU O 40 PX W GÓRĘ */
-
-.tytul-gry,
-.panel-wpisywania,
-.naglowki,
-#historia {
-    translate: 0 -40px;
-}
-
-/* WIĘKSZY TYTUŁ — TYLKO TELEFON */
-
-@media (max-width: 768px) {
-    .tytul-gora {
-        font-size: clamp(28px, 8vw, 42px);
-    }
-
-    .tytul-dol {
-        font-size: clamp(23px, 6.5vw, 38px);
-    }
-}
-
-/* TYTUŁ 2× WIĘKSZY — TYLKO MOBILE */
-
-@media (max-width: 768px) {
-    .tytul-gora {
-        font-size: clamp(56px, 16vw, 84px);
-    }
-
-    .tytul-dol {
-        font-size: clamp(46px, 13vw, 76px);
-    }
-}
-
-
