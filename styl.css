@@ -1000,5 +1000,22 @@ body::after {
     }
 }
 
+/* MOBILE — LICZNIK LEKKO NA LEWO OD ŚRODKA */
+
+@media (max-width: 768px) {
+
+    body > #licznik.licznik-banner {
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        right: auto;
+
+        margin: 0;
+        translate: -8px 0;
+        transform: translateX(-50%);
+    }
+}
+
+
 
 
