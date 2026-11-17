@@ -892,3 +892,75 @@ body::after {
         translate: 0 75px;
     }
 }
+
+/* ==========================================
+   MOBILE — LOGO, LICZNIK I NAGŁÓWKI
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. DELIKATNIE WIĘKSZE LOGO */
+
+    .tytul-gry .tytul-gora {
+        font-size: clamp(31px, 8.8vw, 40px);
+    }
+
+    .tytul-gry .tytul-dol {
+        font-size: clamp(23px, 6.6vw, 32px);
+    }
+
+
+    /* 2. LICZNIK NA GÓRZE POŚRODKU */
+
+    #licznik.licznik-banner {
+        position: absolute;
+        top: 4px;
+        left: 50%;
+
+        width: 90px;
+        gap: 3px;
+
+        transform: translateX(-50%);
+        translate: none;
+
+        margin: 0;
+        z-index: 30;
+    }
+
+    .licznik-banner .licznik-etykieta {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .licznik-banner .licznik-tablica {
+        width: 90px;
+        height: 43px;
+        border-width: 3px;
+    }
+
+    .licznik-banner .licznik-wartosc {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+
+    /* 3. NIŻSZE NAGŁÓWKI */
+
+    .naglowki {
+        min-height: 47px;
+        padding: 4px 3px;
+        gap: 3px;
+    }
+
+    .naglowki .naglowek {
+        gap: 1px;
+        font-size: 11px;
+        line-height: 1;
+    }
+
+    .naglowki .naglowek svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
