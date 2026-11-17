@@ -915,7 +915,7 @@ body::after {
     #licznik.licznik-banner {
         position: absolute;
         top: 4px;
-        left: calc(50%-2px);
+        left: calc(50%);
 
         width: 90px;
         gap: 3px;
@@ -987,7 +987,7 @@ body::after {
 
 @media (max-width: 768px) {
     .naglowki {
-        margin-top: 48px;
+        margin-top: 45px;
     }
 }
 
