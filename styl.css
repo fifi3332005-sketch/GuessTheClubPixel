@@ -915,7 +915,7 @@ body::after {
     #licznik.licznik-banner {
         position: absolute;
         top: 4px;
-        left: 50%;
+        left: calc(50%-15px);
 
         width: 90px;
         gap: 3px;
