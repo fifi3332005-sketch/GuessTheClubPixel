@@ -1219,4 +1219,16 @@ button:active {
     }
 }
 
+/* TYTUŁ 2× WIĘKSZY — TYLKO MOBILE */
+
+@media (max-width: 768px) {
+    .tytul-gora {
+        font-size: clamp(56px, 16vw, 84px);
+    }
+
+    .tytul-dol {
+        font-size: clamp(46px, 13vw, 76px);
+    }
+}
+
 
