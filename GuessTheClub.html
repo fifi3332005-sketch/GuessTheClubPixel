@@ -1,0 +1,173 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#003d13">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Guess the Football Club!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <script>
+        const wersja = Date.now();
+
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = `styl.css?v=${wersja}`;
+        document.head.appendChild(css);
+    </script>
+</head>
+
+<body>
+    <!-- LOGOTYP RETRO — CAŁKOWICIE Z KODU -->
+
+    <h1 class="tytul-gry">
+        <span class="tytul-gora">Guess the</span>
+        <span class="tytul-dol">Football Club</span>
+    </h1>
+
+    <!-- LICZNIK PRÓB -->
+
+    <p id="licznik" aria-live="polite">7 Guesses left</p>
+
+    <!-- WYSZUKIWARKA -->
+
+    <div class="panel-wpisywania">
+        <svg
+            class="ikona-lupy"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="square"
+            stroke-linejoin="miter"
+            aria-hidden="true"
+        >
+            <circle cx="10" cy="10" r="6.5"/>
+            <path d="m15 15 6 6"/>
+        </svg>
+
+        <input
+            id="nazwaKlubu"
+            type="text"
+            placeholder="Enter the club name..."
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+            aria-label="Club name"
+            aria-controls="podpowiedzi"
+        >
+
+        <div id="podpowiedzi"></div>
+    </div>
+
+    <!-- NAGŁÓWKI TABELI -->
+
+    <div class="naglowki">
+
+        <div class="naglowek">
+            <i data-lucide="shield"></i>
+            <span>Club Name</span>
+        </div>
+
+        <div class="naglowek">
+            <i data-lucide="flag"></i>
+            <span>Country</span>
+        </div>
+
+        <div class="naglowek">
+            <i data-lucide="map-pin"></i>
+            <span>City</span>
+        </div>
+
+        <div class="naglowek">
+            <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="miter"
+                aria-hidden="true"
+            >
+                <ellipse cx="16" cy="12" rx="12" ry="6"/>
+                <path d="M4 12v10c0 3.5 5.4 6 12 6s12-2.5 12-6V12"/>
+                <ellipse cx="16" cy="12" rx="6.5" ry="3"/>
+                <path d="M9 10l-3-4M23 10l3-4M12 12h8M16 9v6M10 21h12"/>
+            </svg>
+            <span>Capacity</span>
+        </div>
+
+        <div class="naglowek">
+            <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="miter"
+                aria-hidden="true"
+            >
+                <ellipse cx="16" cy="7" rx="11" ry="4"/>
+                <path d="M5 7v6c0 2.2 4.9 4 11 4s11-1.8 11-4V7"/>
+                <path d="M5 13v6c0 2.2 4.9 4 11 4s11-1.8 11-4v-6"/>
+                <path d="M5 19v6c0 2.2 4.9 4 11 4s11-1.8 11-4v-6"/>
+            </svg>
+            <span>Value</span>
+        </div>
+
+        <div class="naglowek">
+            <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="miter"
+                aria-hidden="true"
+            >
+                <path d="M12 9c0 4-5 9-5 9S2 13 2 9a5 5 0 0 1 10 0Z"/>
+                <circle cx="7" cy="9" r="1.5"/>
+                <path d="M30 7c0 4-5 9-5 9s-5-5-5-9a5 5 0 0 1 10 0Z"/>
+                <circle cx="25" cy="7" r="1.5"/>
+                <path d="M8 22c4-5 9 3 14-2s-2-5 3-9"
+                      stroke-dasharray="2.5 3"/>
+            </svg>
+            <span>Distance</span>
+        </div>
+    </div>
+
+    <!-- HISTORIA ZGADYWANIA -->
+
+    <div id="historia"></div>
+
+    <!-- IKONY -->
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+    <!-- SKRYPT GRY -->
+
+    <script>
+        if (typeof lucide !== "undefined") {
+            lucide.createIcons();
+        }
+
+        const skrypt = document.createElement("script");
+        skrypt.src = `Skrypt.js?v=${wersja}`;
+        document.body.appendChild(skrypt);
+    </script>
+</body>
+</html>
