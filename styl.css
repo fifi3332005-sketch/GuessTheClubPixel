@@ -1,9 +1,9 @@
 /* ===========================================================
-   GUESS THE FOOTBALL CLUB â RETRO PIXEL ARCADE
+   GUESS THE FOOTBALL CLUB Ă˘ÂÂ RETRO PIXEL ARCADE
    Interfejs zbudowany w HTML i CSS
    =========================================================== */
 
-/* 1. PALETA KOLORÄÂW I USTAWIENIA */
+/* 1. PALETA KOLORĂÂĂÂW I USTAWIENIA */
 
 :root {
     --panel: rgba(0, 43, 30, .94);
@@ -228,7 +228,7 @@ body > * {
 }
 
 
-/* 5. PODPOWIEDZI KLUBÄÂW */
+/* 5. PODPOWIEDZI KLUBĂÂĂÂW */
 
 #podpowiedzi {
     position: absolute;
@@ -290,7 +290,7 @@ body > * {
 }
 
 
-/* 6. WSPÄÂLNY STYL NAGÄšÂÄÂWKÄÂW I HISTORII */
+/* 6. WSPĂÂĂÂLNY STYL NAGĂĹĄĂÂĂÂĂÂWKĂÂĂÂW I HISTORII */
 
 .naglowki,
 .wiersz {
@@ -341,7 +341,7 @@ body > * {
 }
 
 
-/* 7. NAGÄšÂÄÂWKI KATEGORII */
+/* 7. NAGĂĹĄĂÂĂÂĂÂWKI KATEGORII */
 
 .naglowki {
     margin-top: 63px;
@@ -390,7 +390,7 @@ body > * {
 }
 
 
-/* 8. HISTORIA PRÄÂB */
+/* 8. HISTORIA PRĂÂĂÂB */
 
 #historia {
     width: 100%;
@@ -427,7 +427,7 @@ body > * {
 }
 
 
-/* 9. KAFELKI WYNIKÄÂW */
+/* 9. KAFELKI WYNIKĂÂĂÂW */
 
 .komorka {
     display: flex;
@@ -482,14 +482,14 @@ body > * {
     );
 }
 
-/* Zielony Ă˘ÂÂ poprawna wartoÄšÂĂÂ */
+/* Zielony ÄËĂÂĂÂ poprawna wartoĂĹĄĂÂÄÂĂÂ */
 
 .komorka.zielony {
     background: #159e38;
     border-color: #20d910;
 }
 
-/* Czerwony Ă˘ÂÂ bÄšÂĂÂdna wartoÄšÂĂÂ */
+/* Czerwony ÄËĂÂĂÂ bĂĹĄĂÂÄÂĂÂdna wartoĂĹĄĂÂÄÂĂÂ */
 
 .komorka.czerwony,
 .komorka.odleglosc {
@@ -498,7 +498,7 @@ body > * {
 }
 
 
-/* 10. FLAGI I STRZAÄšÂKI */
+/* 10. FLAGI I STRZAĂĹĄĂÂKI */
 
 .wiersz .flaga {
     display: inline-flex;
@@ -567,7 +567,7 @@ button:active {
 
 
 /* ===========================================================
-   12. LICZNIK PRĂB
+   12. LICZNIK PRÄÂB
    =========================================================== */
 #licznik.licznik-banner {
     position: absolute;
@@ -611,23 +611,23 @@ button:active {
     line-height: 1;
     text-shadow: 3px 3px 0 #007b26,5px 5px 0 #000;
 }
-/* UkĹad interfejsu niezaleĹźny od poĹoĹźenia tĹa */
+/* UkÄšÂad interfejsu niezaleÄšĹşny od poÄšÂoÄšĹşenia tÄšÂa */
 body > .tytul-gry,
 body > .panel-wpisywania,
 body > .naglowki,
-body > #historia { translate: 0 20px; }
-/* Nie skaluj tĹa wraz z liczbÄ dodawanych wierszy */
+body > #historia { translate: none; }
+/* Nie skaluj tÄšÂa wraz z liczbĂÂ dodawanych wierszy */
 @media (min-width: 769px) {
     body { background-attachment: fixed; }
 }
-/* Podpowiedzi â pikselowe naroĹźniki */
+/* Podpowiedzi Ă˘ÂÂ pikselowe naroÄšĹşniki */
 #podpowiedzi {
     border-width: 3px;
     box-shadow: 4px 4px 0 #006f1e;
     clip-path: polygon(9px 0,calc(100% - 9px) 0,calc(100% - 9px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 9px,100% 9px,100% calc(100% - 9px),calc(100% - 4px) calc(100% - 9px),calc(100% - 4px) calc(100% - 4px),calc(100% - 9px) calc(100% - 4px),calc(100% - 9px) 100%,9px 100%,9px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 9px),0 calc(100% - 9px),0 9px,4px 9px,4px 4px,9px 4px);
 }
 #nazwaKlubu { line-height: 1; }
-/* MgĹa na tle boiska */
+/* MgÄšÂa na tle boiska */
 body::before {
     content: "";
     display: block;
@@ -652,7 +652,7 @@ body::after {
 
 
 /* ===========================================================
-   13. EKRANY KOĹCOWE â WSPĂLNY SZKIELET
+   13. EKRANY KOÄšÂCOWE Ă˘ÂÂ WSPÄÂLNY SZKIELET
    =========================================================== */
 .ekran-wygranej,
 .ekran-przegranej {
@@ -710,7 +710,7 @@ body::after {
 .okno-przegranej::after { box-shadow: inset 0 0 0 7px #ff304c,inset 0 0 0 12px #7c1025,inset 0 0 0 15px rgba(20,0,6,.9); }
 .okno-wygranej > *,
 .okno-przegranej > * { position: relative; z-index: 2; }
-/* ZĹoto-pomaraĹczowy i czerwony napis retro */
+/* ZÄšÂoto-pomaraÄšÂczowy i czerwony napis retro */
 .tytul-wygranej,
 .tytul-porazki {
     display: flex;
@@ -782,7 +782,7 @@ body::after {
 }
 .liczba-prob-wygranej { color: #e2f6df; }
 .tekst-porazki { color: #ffe2e5; }
-/* Przyciski koĹcowe */
+/* Przyciski koÄšÂcowe */
 .okno-wygranej button,
 .okno-przegranej button {
     display: flex;
@@ -814,7 +814,7 @@ body::after {
 
 
 /* ===========================================================
-   14. RESPONSYWNOĹÄ â TELEFONY
+   14. RESPONSYWNOÄšÂĂÂ Ă˘ÂÂ TELEFONY
    =========================================================== */
 @media (max-width: 768px) {
     body {
@@ -825,26 +825,31 @@ body::after {
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
-    .tytul-gry { margin-top: clamp(158px,44vw,205px); margin-bottom: 20px; gap: 0; }
+    /* Logo pod biaĹÄ liniÄ stadionu, a reszta ukĹadu za nim */
+    .tytul-gry {
+        margin-top: clamp(94px, 27vw, 122px);
+        margin-bottom: 12px;
+        gap: 0;
+    }
     .tytul-gora {
-        font-size: clamp(56px,16vw,84px);
+        font-size: clamp(27px,7.5vw,35px);
         -webkit-text-stroke: .5px #05100a;
         text-shadow: 2px 2px #8f9b93,3px 3px #07110b,5px 5px #000;
     }
     .tytul-dol {
         gap: 6px;
-        font-size: clamp(46px,13vw,76px);
+        font-size: clamp(22px,6vw,30px);
         -webkit-text-stroke: .65px #551608;
         text-shadow: 1px 1px #ff9b00,3px 3px #f34b05,4px 4px #b50c17,6px 6px #300000;
     }
-    .tytul-dol::before,.tytul-dol::after { width: clamp(12px,5vw,25px); height: 5px; border-top-width: 2px; box-shadow: 0 5px #ffa600,0 8px #a80b20; }
+    .tytul-dol::before,.tytul-dol::after { width: 12px; height: 5px; border-top-width: 2px; box-shadow: 0 5px #ffa600,0 8px #a80b20; }
     #licznik.licznik-banner { top: 14px; left: 12px; width: 110px; gap: 4px; }
     .licznik-etykieta { font-size: 14px; letter-spacing: 1px; }
     .licznik-tablica { width: 110px; height: 51px; border-width: 3px; box-shadow: 3px 3px 0 #006f1e,5px 5px 0 #001c0a; }
     .licznik-wartosc { font-size: 29px; letter-spacing: 1px; }
-    .panel-wpisywania { width: 100%; }
-    .panel-wpisywania input { height: 55px; padding: 8px 10px 8px 49px; border-width: 4px; font-size: max(16px,clamp(17px,5vw,22px)); }
-    .ikona-lupy { width: 24px; height: 24px; left: 15px; }
+    .panel-wpisywania { width: 82%; max-width: 360px; margin-inline: auto; }
+    .panel-wpisywania input { height: 50px; padding: 8px 10px 8px 44px; border-width: 4px; font-size: 16px; }
+    .ikona-lupy { width: 21px; height: 21px; left: 14px; }
     .podpowiedz { padding: 11px 10px; font-size: 18px; }
     .naglowki,.wiersz { width: 100%; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 3px; border-width: 3px; }
     .naglowki { margin-top: 34px; margin-bottom: 5px; padding: 9px 3px; min-height: 64px; }
@@ -868,7 +873,7 @@ body::after {
     .okno-wygranej button,.okno-przegranej button { width: 244px; height: 56px; min-height: 56px; font-size: 13px; border-width: 4px; }
 }
 @media (max-width: 380px) {
-    .tytul-gry { margin-top: 150px; }
+    .tytul-gry { margin-top: 92px; }
     .naglowki .naglowek { font-size: 10px; }
 }
 @media (max-height: 470px) {
@@ -876,74 +881,14 @@ body::after {
     .okno-wygranej,.okno-przegranej { height: auto; min-height: 390px; flex-shrink: 0; }
 }
 
-/* PRZESUNIĘCIE INTERFEJSU 30 PX W DÓŁ */
-/* Bez przesuwania tła i licznika */
+/* DESKTOP: PRZESUNIÄCIE INTERFEJSU W DĂĹ */
+/* Bez przesuwania tĹa i licznika */
 
-body > .tytul-gry,
-body > .panel-wpisywania,
-body > .naglowki,
-body > #historia {
-    translate: 0 75px;
-}
-
-/* ==========================================
-   MOBILE — MNIEJSZE LOGO I WYŻSZY INTERFEJS
-   ========================================== */
-
-@media (max-width: 768px) {
-
-    /* 1. Cały interfejs trochę wyżej */
-
+@media (min-width: 769px) {
     body > .tytul-gry,
     body > .panel-wpisywania,
     body > .naglowki,
     body > #historia {
-        translate: 0 -10px;
-    }
-
-    /* 2. Logo bliżej białej linii stadionu */
-
-    .tytul-gry {
-        margin-top: clamp(110px, 30vw, 140px);
-        margin-bottom: 18px;
-        gap: 0;
-    }
-
-    /* GUESS THE */
-
-    .tytul-gora {
-        font-size: clamp(34px, 9vw, 48px);
-    }
-
-    /* FOOTBALL CLUB */
-
-    .tytul-dol {
-        font-size: clamp(28px, 7.5vw, 40px);
-        gap: 5px;
-    }
-
-    /* Krótsze paski przy logo */
-
-    .tytul-dol::before,
-    .tytul-dol::after {
-        width: 15px;
-    }
-
-    /* 3. Węższa, wyśrodkowana wyszukiwarka */
-
-    .panel-wpisywania {
-        width: 88%;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Rozmiar wpisywanego tekstu */
-
-    .panel-wpisywania input {
-        width: 100%;
-        height: 52px;
-        font-size: 16px;
+        translate: 0 75px;
     }
 }
-
