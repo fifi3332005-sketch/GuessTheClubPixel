@@ -963,4 +963,33 @@ body::after {
         height: 17px;
     }
 }
+/* MOBILE — NIŻSZE PODPOWIEDZI KLUBÓW */
+
+@media (max-width: 768px) {
+
+    .podpowiedz {
+        padding: 5px 10px;
+        min-height: 32px;
+        gap: 8px;
+    }
+
+    .flaga-podpowiedzi img {
+        width: 24px;
+        height: 16px;
+    }
+
+    #podpowiedzi {
+        max-height: 190px;
+    }
+}
+
+/* MOBILE — WIĘKSZY ODSTĘP PRZED NAGŁÓWKAMI */
+
+@media (max-width: 768px) {
+    .naglowki {
+        margin-top: 48px;
+    }
+}
+
+
 
